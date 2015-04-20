@@ -57,7 +57,23 @@
     <Compile Include="AutoHideGroupControl.cs" />
     <Compile Include="AutoHideRootControl.cs" />
     <Compile Include="AutoHideGroupItem.cs" />
+    <Compile Include="DocumentPaneControlCommands.cs" />
+    <Compile Include="DockGroupControl.cs" />
     <Compile Include="DockingContainer.cs" />
+    <Compile Include="DocumentPaneControl.cs" />
+    <Compile Include="DocumentPaneItem.cs" />
+    <Compile Include="DraggingMode.cs" />
+    <Compile Include="Internals\BindingHelpers.cs" />
+    <Compile Include="Internals\IDraggingStrategy.cs" />
+    <Compile Include="Internals\ContinuousDraggingStrategy.cs" />
+    <Compile Include="Internals\DeferredDraggingStrategy.cs" />
+    <Compile Include="Internals\VisualTreeHelpers.cs" />
+    <Compile Include="ItemLength.cs" />
+    <Compile Include="ItemLengthConverter.cs" />
+    <Compile Include="ItemLengthUnitType.cs" />
+    <Compile Include="Model\DocumentPaneGroup.cs" />
+    <Compile Include="Model\DockGroup.cs" />
+    <Compile Include="Model\DockPaneGroup.cs" />
     <Compile Include="PaneCommands.cs" />
     <Compile Include="PaneControl.cs" />
     <Compile Include="PaneItem.cs" />
@@ -71,6 +87,8 @@
     <Compile Include="Model\PaneView.cs" />
     <Compile Include="Model\PaneViewCollection.cs" />
     <Compile Include="Model\View.cs" />
+    <Compile Include="Primitives\SplitterItemsPanel.cs" />
+    <Compile Include="Primitives\SplitterGrip.cs" />
     <Compile Include="Primitives\FlyoutPanel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -85,6 +103,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="SplitterItem.cs" />
     <Compile Include="WindowCommands.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -120,7 +139,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\DockGroupControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\DockingContainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\DocumentPaneControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\DocumentPaneItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -141,6 +172,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\Shared.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\SplitterGrip.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

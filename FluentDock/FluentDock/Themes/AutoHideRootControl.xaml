@@ -35,6 +35,18 @@
                                            ItemContainerStyle="{StaticResource Style}" />
 
             </DataTemplate>
+            <DataTemplate DataType="{x:Type md:DockGroup}">
+                <fd:DockGroupControl ItemsSource="{Binding Path=Items}"
+                                     Orientation="{Binding Path=Orientation}" />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type md:DocumentPaneGroup}">
+                <fd:DocumentPaneControl ItemsSource="{Binding Path=Items}" />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type md:DockPaneGroup}">
+                <fd:PaneControl ItemsSource="{Binding Path=Items}" />
+            </DataTemplate>
         </Style.Resources>
         
         <Setter Property="ItemContainerStyle">

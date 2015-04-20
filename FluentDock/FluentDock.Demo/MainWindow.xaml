@@ -64,6 +64,25 @@
                     </fd:PaneView>
                 </fd:AutoHideGroupView>
             </fd:AutoHideChannelView>
+            <fd:DockGroup Orientation="Horizontal">
+                <fd:DockGroup Orientation="Vertical">
+                    <fd:DockPaneGroup>
+                        <fd:PaneView Header="Solution Explorer" Title="Solution Explorer" />
+                        <fd:PaneView Header="Team Explorer" Title="Team Explorer" />
+                    </fd:DockPaneGroup>
+                    <fd:DocumentPaneGroup>
+                        <fd:PaneView Header="SplitterItemsPanel.cs" />
+                        <fd:PaneView Header="MainWindow.xaml" />
+                    </fd:DocumentPaneGroup>
+                    <fd:DockPaneGroup DockedWidth="200"
+                                      DockedHeight="200"
+                                      FloatingWidth="200"
+                                      FloatingHeight="200">
+                        <fd:PaneView Header="Solution Explorer" Title="Solution Explorer" />
+                        <fd:PaneView Header="Team Explorer" Title="Team Explorer" />
+                    </fd:DockPaneGroup>
+                </fd:DockGroup>
+            </fd:DockGroup>
         </fd:DockingProfile>
     </Window.Resources>
     
