@@ -99,7 +99,7 @@ namespace FluentDock
             else if (s.EndsWith("*"))
             {
                 var starValueStr = s.Substring(0, s.Length - 1);
-                value = Convert.ToDouble(starValueStr, culture);
+                value = string.IsNullOrWhiteSpace(starValueStr) ? 1.0 : Convert.ToDouble(starValueStr, culture);
                 unitType = ItemLengthUnitType.Star;
             }
             else

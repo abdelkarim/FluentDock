@@ -5,6 +5,9 @@ namespace FluentDock.Model
 {
     public abstract class DockingView : View
     {
-
+        public ItemLength DockedWidth { get; set; }
+        public ItemLength DockedHeight { get; set; }
+        public ItemLength FloatingWidth { get; set; }
+        public ItemLength FloatingHeight { get; set; }
     }
 }

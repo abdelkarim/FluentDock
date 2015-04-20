@@ -64,23 +64,27 @@
                     </fd:PaneView>
                 </fd:AutoHideGroupView>
             </fd:AutoHideChannelView>
-            <fd:DockGroup Orientation="Horizontal">
-                <fd:DockGroup Orientation="Vertical">
-                    <fd:DockPaneGroup>
+            <fd:DockGroup Orientation="Horizontal" DockedWidth="*" DockedHeight="*" FloatingHeight="*" FloatingWidth="*">
+                <fd:DockGroup Orientation="Vertical" DockedWidth="*" DockedHeight="*" FloatingHeight="*" FloatingWidth="*">
+                    <!--<fd:DockPaneGroup DockedWidth="300"
+                                      DockedHeight="300"
+                                      FloatingWidth="300"
+                                      FloatingHeight="300">
                         <fd:PaneView Header="Solution Explorer" Title="Solution Explorer" />
                         <fd:PaneView Header="Team Explorer" Title="Team Explorer" />
-                    </fd:DockPaneGroup>
-                    <fd:DocumentPaneGroup>
-                        <fd:PaneView Header="SplitterItemsPanel.cs" />
+                    </fd:DockPaneGroup>-->
+                    <fd:DocumentPaneGroup DockedWidth="*" DockedHeight="*">
+                        <fd:PaneView Header="AutoHideRootControl.cs" />
                         <fd:PaneView Header="MainWindow.xaml" />
+                        <fd:PaneView Header="Shared.xaml" />
                     </fd:DocumentPaneGroup>
-                    <fd:DockPaneGroup DockedWidth="200"
-                                      DockedHeight="200"
-                                      FloatingWidth="200"
-                                      FloatingHeight="200">
+                    <!--<fd:DockPaneGroup DockedWidth="300"
+                                      DockedHeight="300"
+                                      FloatingWidth="300"
+                                      FloatingHeight="300">
                         <fd:PaneView Header="Solution Explorer" Title="Solution Explorer" />
                         <fd:PaneView Header="Team Explorer" Title="Team Explorer" />
-                    </fd:DockPaneGroup>
+                    </fd:DockPaneGroup>-->
                 </fd:DockGroup>
             </fd:DockGroup>
         </fd:DockingProfile>

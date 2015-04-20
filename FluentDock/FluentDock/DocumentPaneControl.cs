@@ -1,13 +1,16 @@
 ﻿using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Input;
+using FluentDock.Primitives;
 
 namespace FluentDock
 {
     [
-        StyleTypedProperty(Property = "NextButtonStyle", StyleTargetType = typeof(Button)),
-        StyleTypedProperty(Property = "PreviousButtonStyle", StyleTargetType = typeof(Button)),
+        TemplatePart(Name = "PART_PinnedDocumentsPanel", Type = typeof(PinnedDocumentsPanel)),
+        StyleTypedProperty(Property = "NextButtonStyle", StyleTargetType = typeof(RepeatButton)),
+        StyleTypedProperty(Property = "PreviousButtonStyle", StyleTargetType = typeof(RepeatButton)),
         StyleTypedProperty(Property = "ItemContainerStyle", StyleTargetType = typeof(DocumentPaneControl))
     ]
     public class DocumentPaneControl : PaneControl
@@ -104,6 +107,16 @@ namespace FluentDock
             if (item != null)
             {
                 
+            }
+        }
+
+        private static void OnPinDocumentPaneCommandExecuted(object sender, ExecutedRoutedEventArgs e)
+        {
+            var paneControl = (DocumentPaneControl) sender;
+            var paneItem = e.OriginalSource as DocumentPaneItem;
+            if (paneItem != null)
+            {
+                paneItem.IsPinned = !paneItem.IsPinned;
             }
         }
 

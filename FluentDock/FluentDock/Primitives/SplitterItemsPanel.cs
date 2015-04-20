@@ -42,6 +42,61 @@ namespace FluentDock.Primitives
 
         #region "Properties"
 
+        #region Length
+
+        /// <summary>
+        /// Length Attached Dependency Property
+        /// </summary>
+        public static readonly DependencyProperty LengthProperty = DependencyProperty.RegisterAttached(
+            "Length",
+            typeof(ItemLength),
+            typeof(SplitterItemsPanel),
+            new FrameworkPropertyMetadata(new ItemLength(1, ItemLengthUnitType.Star),
+                (o, args) =>
+                {
+                    // we should invalidate the arrange of the parent
+                    var item = (SplitterItem)o;
+
+                    var itemsControl = ItemsControl.ItemsControlFromItemContainer(item) as DockGroupControl;
+                    if (itemsControl != null && itemsControl.DisallowPanelInvalidation)
+                        return;
+
+                    var panel = DockGroupControl.PanelFromContainer(item);
+                    if (panel != null)
+                        panel.InvalidateMeasure();
+                },
+                (o, value) =>
+                {
+                    var length = (ItemLength)value;
+
+                    if (length.Value < 0.0)
+                        length.Value = 0.0;
+
+                    return length;
+                }));
+
+        /// <summary>
+        /// Gets the Length property. This dependency property 
+        /// indicates ....
+        /// </summary>
+        public static ItemLength GetLength(DependencyObject d)
+        {
+            return (ItemLength)d.GetValue(LengthProperty);
+        }
+
+        /// <summary>
+        /// Sets the Length property. This dependency property 
+        /// indicates ....
+        /// </summary>
+        public static void SetLength(DependencyObject d, ItemLength value)
+        {
+            d.SetValue(LengthProperty, value);
+        }
+
+        #endregion
+
+
+
         #region Orientation
 
         /// <summary>

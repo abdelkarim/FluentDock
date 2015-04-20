@@ -21,11 +21,6 @@ namespace FluentDock.Model
 
         public PaneViewCollection Items { get; private set; }
 
-        public double DockedWidth { get; set; }
-        public double DockedHeight { get; set; }
-        public double FloatingWidth { get; set; }
-        public double FloatingHeight { get; set; }
-
         #endregion
     }
 }

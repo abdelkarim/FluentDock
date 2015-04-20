@@ -37,15 +37,35 @@
             </DataTemplate>
             <DataTemplate DataType="{x:Type md:DockGroup}">
                 <fd:DockGroupControl ItemsSource="{Binding Path=Items}"
-                                     Orientation="{Binding Path=Orientation}" />
+                                     Orientation="{Binding Path=Orientation}">
+                    <fd:DockGroupControl.ItemContainerStyle>
+                        <Style TargetType="fd:SplitterItem">
+                            <Setter Property="Length" Value="{Binding Path=DockedWidth}" />
+                        </Style>
+                    </fd:DockGroupControl.ItemContainerStyle>
+                </fd:DockGroupControl>
             </DataTemplate>
 
             <DataTemplate DataType="{x:Type md:DocumentPaneGroup}">
-                <fd:DocumentPaneControl ItemsSource="{Binding Path=Items}" />
+                <fd:DocumentPaneControl ItemsSource="{Binding Path=Items}">
+                    <fd:DocumentPaneControl.ItemContainerStyle>
+                        <Style TargetType="{x:Type fd:DocumentPaneItem}">
+                            <Setter Property="Header" Value="{Binding Path=Header}" />
+                            <Setter Property="Content" Value="{Binding Path=Content}" />
+                        </Style>
+                    </fd:DocumentPaneControl.ItemContainerStyle>
+                </fd:DocumentPaneControl>
             </DataTemplate>
 
             <DataTemplate DataType="{x:Type md:DockPaneGroup}">
-                <fd:PaneControl ItemsSource="{Binding Path=Items}" />
+                <fd:PaneControl ItemsSource="{Binding Path=Items}">
+                    <fd:PaneControl.ItemContainerStyle>
+                        <Style TargetType="{x:Type fd:PaneItem}">
+                            <Setter Property="Header" Value="{Binding Path=Header}" />
+                            <Setter Property="Content" Value="{Binding Path=Content}" />
+                        </Style>
+                    </fd:PaneControl.ItemContainerStyle>
+                </fd:PaneControl>
             </DataTemplate>
         </Style.Resources>
         

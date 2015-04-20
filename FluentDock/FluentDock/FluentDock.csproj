@@ -87,6 +87,8 @@
     <Compile Include="Model\PaneView.cs" />
     <Compile Include="Model\PaneViewCollection.cs" />
     <Compile Include="Model\View.cs" />
+    <Compile Include="Primitives\DocumentsPanel.cs" />
+    <Compile Include="Primitives\PinnedDocumentsPanel.cs" />
     <Compile Include="Primitives\SplitterItemsPanel.cs" />
     <Compile Include="Primitives\SplitterGrip.cs" />
     <Compile Include="Primitives\FlyoutPanel.cs" />

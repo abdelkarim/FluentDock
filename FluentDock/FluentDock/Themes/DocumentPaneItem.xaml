@@ -8,20 +8,6 @@
 
     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
 
-    <Style x:Key="TabItemFocusVisual">
-        <Setter Property="Control.Template">
-            <Setter.Value>
-                <ControlTemplate>
-                    <Rectangle Margin="3,3,3,1"
-                               StrokeThickness="1"
-                               Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"
-                               StrokeDashArray="1 2"
-                               SnapsToDevicePixels="true"/>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
     <LinearGradientBrush x:Key="TabItemHotBackground"
                          StartPoint="0,0"
                          EndPoint="0,1">
@@ -38,8 +24,7 @@
     <SolidColorBrush x:Key="TabItemDisabledBorderBrush" Color="#FFC9C7BA"/>
 
     <Style x:Key="{x:Type fd:DocumentPaneItem}" TargetType="{x:Type fd:DocumentPaneItem}">
-        <Setter Property="FocusVisualStyle"
-                Value="{StaticResource TabItemFocusVisual}"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Padding" Value="5,3" />
