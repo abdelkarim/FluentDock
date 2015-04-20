@@ -58,4 +58,71 @@
     <SolidColorBrush x:Key="AutoHideHoveredBorder">#FF9BA7B7</SolidColorBrush>
     <SolidColorBrush x:Key="AutoHideHoveredForeground">#FFFFFFFF</SolidColorBrush>
 
+
+    <SolidColorBrush x:Key="TabControlNormalBorderBrush" Color="#8C8E94"/>
+
+    <LinearGradientBrush x:Key="ButtonNormalBackground"
+                         StartPoint="0,0"
+                         EndPoint="0,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#F3F3F3" Offset="0"/>
+            <GradientStop Color="#EBEBEB" Offset="0.5"/>
+            <GradientStop Color="#DDDDDD" Offset="0.5"/>
+            <GradientStop Color="#CDCDCD" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="ActivePaneDragHeaderBrush" Color="#FFF29D" />
+
+    <!--<DrawingBrush x:Key="DragHeaderFillBrush"
+                  Viewbox="0,0,4,5"
+                  ViewboxUnits="Absolute"
+                  Viewport="0,0,4,5"
+                  ViewportUnits="Absolute"
+                  Stretch="None"
+                  TileMode="Tile">
+        <DrawingBrush.Drawing>
+            <GeometryDrawing Brush="#59A8DE">
+                <GeometryDrawing.Geometry>
+                    M 0,0 0,1 1,1 1,0 Z
+                    M 2,2 3,2 3,3 2,3 Z
+                    M 0,4 1,4 1,5 0,5 Z
+                </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>-->
+
+    <SolidColorBrush x:Key="DragHeaderFillBrush" Color="Transparent" />
+    <SolidColorBrush x:Key="MenuItemSelectionFill" Color="#FDF4BF" />
+
+    <!--<LinearGradientBrush x:Key="MenuItemSelectionFill" StartPoint="0,0" EndPoint="0,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#34C5EBFF" Offset="0"/>
+            <GradientStop Color="#3481D8FF" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>-->
+    <!--<LinearGradientBrush x:Key="MenuItemPressedFill" StartPoint="0,0" EndPoint="0,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#28717070" Offset="0"/>
+            <GradientStop Color="#50717070" Offset="0.75"/>
+            <GradientStop Color="#90717070" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>-->
+
+    <SolidColorBrush x:Key="MenuItemPressedFill" Color="#FFE8A6" />
+
+    <SolidColorBrush x:Key="SubMenuBorderBrush" Color="#FF9BA7B7" />
+    <SolidColorBrush x:Key="SubMenuBackgroundBrush" Color="#FFEAF0FF" />
+
+    <!--<LinearGradientBrush x:Key="MenuBackground" StartPoint="0,0" EndPoint="0,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#F6F6F6" Offset="0.25"/>
+            <GradientStop Color="#EAE8E8" Offset="0.25"/>
+            <GradientStop Color="#DCD9D9" Offset="0.8"/>
+            <GradientStop Color="White" Offset="1"/>
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>-->
+
+    <SolidColorBrush x:Key="MenuBackground" Color="Transparent" />
+
 </ResourceDictionary>

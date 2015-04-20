@@ -5,6 +5,8 @@
         <ResourceDictionary Source="/FluentDock;component/Themes/AutoHideGroupControl.xaml" />
         <ResourceDictionary Source="/FluentDock;component/Themes/AutoHideGroupItem.xaml" />
         <ResourceDictionary Source="/FluentDock;component/Themes/AutoHideRootControl.xaml" />
+        <ResourceDictionary Source="/FluentDock;component/Themes/PaneControl.xaml" />
+        <ResourceDictionary Source="/FluentDock;component/Themes/PaneItem.xaml" />
         <ResourceDictionary Source="/FluentDock;component/Themes/DockingContainer.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
