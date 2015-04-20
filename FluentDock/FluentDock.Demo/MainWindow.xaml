@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:fd="http://schemas.fluentdock.io/"
         Title="FluentDock (abdelkarim.se@gmail.com)"
-        Height="500"
+        Height="768"
         Width="1024">
     
     <Window.Resources>
@@ -45,6 +45,22 @@
                         <Border Background="White">
                             <TextBlock Text="Data Sources View" HorizontalAlignment="Center" />
                         </Border>
+                    </fd:PaneView>
+                </fd:AutoHideGroupView>
+            </fd:AutoHideChannelView>
+            <fd:AutoHideChannelView Location="Right">
+                <fd:AutoHideGroupView>
+                    <fd:PaneView Header="Call Stack" Title="Call Stack">
+                    </fd:PaneView>
+                    <fd:PaneView Header="Locals" Title="Locals">
+                    </fd:PaneView>
+                </fd:AutoHideGroupView>
+                <fd:AutoHideGroupView>
+                    <fd:PaneView Header="Breakpoints" Title="Breakpoints">
+                    </fd:PaneView>
+                    <fd:PaneView Header="Output" Title="Output">
+                    </fd:PaneView>
+                    <fd:PaneView Header="Immediate" Title="Immediate">
                     </fd:PaneView>
                 </fd:AutoHideGroupView>
             </fd:AutoHideChannelView>
