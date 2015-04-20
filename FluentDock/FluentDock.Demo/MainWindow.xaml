@@ -1,0 +1,57 @@
+﻿<Window x:Class="FluentDock.Demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:fd="http://schemas.fluentdock.io/"
+        Title="FluentDock (abdelkarim.se@gmail.com)"
+        Height="500"
+        Width="1024">
+    
+    <Window.Resources>
+        <fd:DockingProfile x:Key="NormalProfile">
+            <fd:AutoHideChannelView Location="Left">
+                <fd:AutoHideGroupView>
+                    <fd:PaneView Header="Properties" Title="Properties">
+                        <Border Background="White">
+                            <TextBlock Text="Properties View" HorizontalAlignment="Center" />
+                        </Border>
+                    </fd:PaneView>
+                    <fd:PaneView Header="Team Explorer" Title="Team Explorer">
+                        <Border Background="White">
+                            <TextBlock Text="Team Explorer View" HorizontalAlignment="Center" />
+                        </Border>
+                    </fd:PaneView>
+                    <fd:PaneView Header="Solution Explorer" Title="Solution Explorer - Title">
+                        <fd:PaneView.Content>
+                            <StackPanel Background="White">
+                                <TextBlock Text="Solution Explorer Content"
+                                           HorizontalAlignment="Center"
+                                           Foreground="Red" />
+                            </StackPanel>
+                        </fd:PaneView.Content>
+                    </fd:PaneView>
+                </fd:AutoHideGroupView>
+                <fd:AutoHideGroupView>
+                    <fd:PaneView Header="Toolbox" Title="Toolbox">
+                        <Border Background="White">
+                            <TextBlock Text="Toolbox View" HorizontalAlignment="Center" />
+                        </Border>
+                    </fd:PaneView>
+                    <fd:PaneView Header="Document Outline" Title="Document Outline">
+                        <Border Background="White">
+                            <TextBlock Text="Document Outline View" HorizontalAlignment="Center" />
+                        </Border>
+                    </fd:PaneView>
+                    <fd:PaneView Header="Data Sources" Title="Data Sources">
+                        <Border Background="White">
+                            <TextBlock Text="Data Sources View" HorizontalAlignment="Center" />
+                        </Border>
+                    </fd:PaneView>
+                </fd:AutoHideGroupView>
+            </fd:AutoHideChannelView>
+        </fd:DockingProfile>
+    </Window.Resources>
+    
+    <Grid>
+        <fd:DockingContainer Profile="{StaticResource NormalProfile}" />
+    </Grid>
+</Window>
