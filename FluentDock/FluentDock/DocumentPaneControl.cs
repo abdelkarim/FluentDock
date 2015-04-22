@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using FluentDock.Primitives;
@@ -8,16 +7,25 @@ using FluentDock.Primitives;
 namespace FluentDock
 {
     [
-        TemplatePart(Name = "PART_PinnedDocumentsPanel", Type = typeof(PinnedDocumentsPanel)),
+        TemplatePart(Name = PART_PinnedDocumentsPanel, Type = typeof(PinnedDocumentsPanel)),
+        TemplatePart(Name = PART_DocumentsPanel, Type = typeof(DocumentsPanel)),
         StyleTypedProperty(Property = "NextButtonStyle", StyleTargetType = typeof(RepeatButton)),
         StyleTypedProperty(Property = "PreviousButtonStyle", StyleTargetType = typeof(RepeatButton)),
         StyleTypedProperty(Property = "ItemContainerStyle", StyleTargetType = typeof(DocumentPaneControl))
     ]
     public class DocumentPaneControl : PaneControl
     {
+        #region "Constants"
+
+        private const string PART_PinnedDocumentsPanel = "PART_PinnedDocumentsPanel";
+        private const string PART_DocumentsPanel = "PART_DocumentsPanel";
+
+        #endregion
+
         #region "Fields"
 
-        
+        private PinnedDocumentsPanel _pinnedDocumentsPanel;
+        private DocumentsPanel _documentsPanel;
 
         #endregion
 
@@ -98,6 +106,20 @@ namespace FluentDock
 
         #endregion
 
+        #region "Internal Properties"
+
+        internal PinnedDocumentsPanel PinnedDocumentsPanel
+        {
+            get { return _pinnedDocumentsPanel; }
+        }
+
+        internal DocumentsPanel DocumentsPanel
+        {
+            get { return _documentsPanel; }
+        }
+
+        #endregion
+
         #region "Static Methods"
 
         private static void OnClosePaneCommandExecuted(object sender, ExecutedRoutedEventArgs e)
@@ -132,6 +154,13 @@ namespace FluentDock
         protected override bool IsItemItsOwnContainerOverride(object item)
         {
             return item is DocumentPaneItem;
+        }
+
+        public override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            _pinnedDocumentsPanel = GetTemplateChild(PART_PinnedDocumentsPanel) as PinnedDocumentsPanel;
+            _documentsPanel = GetTemplateChild(PART_DocumentsPanel) as DocumentsPanel;
         }
 
         #endregion

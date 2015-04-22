@@ -52,6 +52,7 @@
                         <Style TargetType="{x:Type fd:DocumentPaneItem}">
                             <Setter Property="Header" Value="{Binding Path=Header}" />
                             <Setter Property="Content" Value="{Binding Path=Content}" />
+                            <Setter Property="IsPinned" Value="{Binding Path=IsPinned}" />
                         </Style>
                     </fd:DocumentPaneControl.ItemContainerStyle>
                 </fd:DocumentPaneControl>

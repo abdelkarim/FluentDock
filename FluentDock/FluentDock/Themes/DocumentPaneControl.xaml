@@ -10,6 +10,7 @@
     <Style x:Key="DocumentsPaneControl_ScrollViewerStyle" TargetType="{x:Type ScrollViewer}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="HorizontalScrollBarVisibility" Value="Auto" />
+        <Setter Property="CanContentScroll" Value="True" />
         <Setter Property="VerticalScrollBarVisibility" Value="Disabled" />
         <Setter Property="Template">
             <Setter.Value>
@@ -20,8 +21,8 @@
                                       CommandTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}"
                                       Style="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type fd:DocumentPaneControl}}, Path=PreviousButtonStyle}">
                             <RepeatButton.Visibility>
-                                <MultiBinding FallbackValue="Visibility.Collapsed"
-                                              Converter="{StaticResource MenuScrollingVisibilityConverter}"
+                                <MultiBinding FallbackValue="Visibility.Hidden"
+                                              Converter="{StaticResource DocumentsScrollingVisibilityConverter}"
                                               ConverterParameter="0">
                                     <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="ComputedHorizontalScrollBarVisibility"/>
                                     <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="HorizontalOffset"/>
@@ -35,8 +36,8 @@
                                       CommandTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}"
                                       Style="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type fd:DocumentPaneControl}}, Path=NextButtonStyle}">
                             <RepeatButton.Visibility>
-                                <MultiBinding FallbackValue="Visibility.Collapsed"
-                                              Converter="{StaticResource MenuScrollingVisibilityConverter}"
+                                <MultiBinding FallbackValue="Visibility.Hidden"
+                                              Converter="{StaticResource DocumentsScrollingVisibilityConverter}"
                                               ConverterParameter="100">
                                     <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="ComputedHorizontalScrollBarVisibility"/>
                                     <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="HorizontalOffset"/>
@@ -45,7 +46,10 @@
                                 </MultiBinding>
                             </RepeatButton.Visibility>
                         </RepeatButton>
-                        <ScrollContentPresenter />
+                        <ScrollContentPresenter x:Name="PART_ScrollContentPresenter"
+                                                Content="{TemplateBinding Content}"
+                                                ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                CanContentScroll="{TemplateBinding CanContentScroll}" />
                     </DockPanel>
                 </ControlTemplate>
             </Setter.Value>
@@ -154,17 +158,17 @@
                             <pr:PinnedDocumentsPanel x:Name="PART_PinnedDocumentsPanel"
                                                      DockPanel.Dock="Left" />
                             <ScrollViewer Style="{StaticResource DocumentsPaneControl_ScrollViewerStyle}">
-                                <StackPanel Orientation="Horizontal"
-                                            CanHorizontallyScroll="True"
-                                            CanVerticallyScroll="False"
-                                            IsItemsHost="True"
-                                            x:Name="HeaderPanel" />
+                                <pr:DocumentsPanel x:Name="PART_DocumentsPanel"
+                                                   IsItemsHost="True" />
                             </ScrollViewer>
                         </DockPanel>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                        </Trigger>
+                        <Trigger SourceName="PART_PinnedDocumentsPanel" Property="HasMultipleRows" Value="True">
+                            <Setter TargetName="PART_PinnedDocumentsPanel" Property="DockPanel.Dock" Value="Top" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

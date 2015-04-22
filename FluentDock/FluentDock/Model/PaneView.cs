@@ -17,6 +17,7 @@ namespace FluentDock.Model
         private double _dockedWidth;
         private double _floatingHeight;
         private double _floatingWidth;
+        private bool _isPinned;
 
         #endregion
 
@@ -128,6 +129,22 @@ namespace FluentDock.Model
 
                 RaisePropertyChanging();
                 _floatingHeight = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        public bool IsPinned
+        {
+            get { return _isPinned; }
+            set
+            {
+                if (_isPinned == value)
+                {
+                    return;
+                }
+
+                RaisePropertyChanging();
+                _isPinned = value;
                 RaisePropertyChanged();
             }
         }

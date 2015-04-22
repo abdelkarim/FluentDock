@@ -57,6 +57,7 @@
     <Compile Include="AutoHideGroupControl.cs" />
     <Compile Include="AutoHideRootControl.cs" />
     <Compile Include="AutoHideGroupItem.cs" />
+    <Compile Include="Converters\DocumentsScrollingVisibilityConverter.cs" />
     <Compile Include="DocumentPaneControlCommands.cs" />
     <Compile Include="DockGroupControl.cs" />
     <Compile Include="DockingContainer.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Internals\IDraggingStrategy.cs" />
     <Compile Include="Internals\ContinuousDraggingStrategy.cs" />
     <Compile Include="Internals\DeferredDraggingStrategy.cs" />
+    <Compile Include="Internals\UIElementCollectionExtensions.cs" />
     <Compile Include="Internals\VisualTreeHelpers.cs" />
     <Compile Include="ItemLength.cs" />
     <Compile Include="ItemLengthConverter.cs" />

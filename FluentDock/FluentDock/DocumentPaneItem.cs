@@ -1,15 +1,15 @@
 ﻿using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 using FluentDock.Internals;
+using FluentDock.Primitives;
 
 namespace FluentDock
 {
     public class DocumentPaneItem : PaneItem
     {
         #region "Fields"
-
-
 
         #endregion
 
@@ -165,7 +165,27 @@ namespace FluentDock
 
         #region "Methods"
 
+        protected override void OnPinned()
+        {
+            base.OnPinned();
 
+            var panel = VisualTreeHelper.GetParent(this) as DocumentsPanel;
+            if (panel != null)
+            {
+                panel.PinChild(this);
+            }
+        }
+
+        protected override void OnUnpinned()
+        {
+            base.OnUnpinned();
+
+            var panel = VisualTreeHelper.GetParent(this) as PinnedDocumentsPanel;
+            if (panel != null)
+            {
+                panel.UnpinChild(this);
+            }
+        }
 
         #endregion
     }

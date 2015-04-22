@@ -1,5 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:FluentDock.Converters">
     <!-- SHAPES -->
     <Geometry x:Key="MaximizeGeometry">
         M 0,0 9,0 9,9 0,9 Z
@@ -49,6 +50,7 @@
     
     <!-- CONVERTERS -->
     <MenuScrollingVisibilityConverter x:Key="MenuScrollingVisibilityConverter" />
+    <converters:DocumentsScrollingVisibilityConverter x:Key="DocumentsScrollingVisibilityConverter" />
     
     
     

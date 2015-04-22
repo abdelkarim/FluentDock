@@ -10,7 +10,7 @@ namespace FluentDock
         #region "Constructors"
 
         /// <summary>
-        /// Initializes static members of the <see cref="DockPane"/> class.
+        /// Initializes static members of the <see cref="PaneItem"/> class.
         /// </summary>
         static PaneItem()
         {
@@ -18,9 +18,9 @@ namespace FluentDock
         }
 
         /// <summary>
-        /// Initializes instance members of the <see cref="DockPane"/> class.
+        /// Initializes instance members of the <see cref="PaneItem"/> class.
         /// </summary>
-        public PaneItem()
+        public PaneItem() : base()
         {
 
         }
@@ -90,7 +90,23 @@ namespace FluentDock
             "IsPinned",
             typeof(bool),
             typeof(PaneItem),
-            new FrameworkPropertyMetadata(BooleanBoxes.False));
+            new FrameworkPropertyMetadata(
+                BooleanBoxes.False,
+                FrameworkPropertyMetadataOptions.BindsTwoWayByDefault,
+                (o, args) =>
+                {
+                    var pane = (PaneItem) o;
+
+                    if ((bool)args.NewValue)
+                    {
+                        pane.OnPinned();
+                    }
+                    else
+                    {
+                        pane.OnUnpinned();
+                    }
+                }));
+
 
         /// <summary>
         /// Gets or sets the IsPinned property. This is a dependency property.
@@ -155,6 +171,20 @@ namespace FluentDock
         }
 
         #endregion
+
+        #endregion
+
+        #region "Methods"
+
+        protected virtual void OnPinned()
+        {
+            
+        }
+
+        protected virtual void OnUnpinned()
+        {
+
+        }
 
         #endregion
     }

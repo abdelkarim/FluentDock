@@ -95,8 +95,6 @@ namespace FluentDock.Primitives
 
         #endregion
 
-
-
         #region Orientation
 
         /// <summary>

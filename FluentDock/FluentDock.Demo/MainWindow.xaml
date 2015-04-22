@@ -74,9 +74,40 @@
                         <fd:PaneView Header="Team Explorer" Title="Team Explorer" />
                     </fd:DockPaneGroup>-->
                     <fd:DocumentPaneGroup DockedWidth="*" DockedHeight="*">
-                        <fd:PaneView Header="AutoHideRootControl.cs" />
-                        <fd:PaneView Header="MainWindow.xaml" />
-                        <fd:PaneView Header="Shared.xaml" />
+                        <fd:PaneView Header="AutoHideRootControl.cs" IsPinned="True" />
+                        <fd:PaneView Header="AutoHideRootControl.cs" IsPinned="True" />
+                        <fd:PaneView Header="AutoHideRootControl.cs" IsPinned="True" />
+                        <fd:PaneView Header="AutoHideRootControl.cs" IsPinned="True" />
+                        <fd:PaneView Header="AutoHideRootControl.cs" IsPinned="True" />
+                        <fd:PaneView Header="AutoHideRootControl.cs" IsPinned="True" />
+                        <fd:PaneView Header="AutoHideRootControl.cs" IsPinned="True">
+                            <fd:PaneView.Content>
+                                <TextBox AcceptsReturn="True" AcceptsTab="True">
+                                    
+                                </TextBox>
+                            </fd:PaneView.Content>
+                        </fd:PaneView>
+                        <fd:PaneView Header="MainWindow.xaml">
+                            <fd:PaneView.Content>
+                                <TextBox AcceptsReturn="True" AcceptsTab="True">
+
+                                </TextBox>
+                            </fd:PaneView.Content>
+                        </fd:PaneView>
+                        <fd:PaneView Header="Shared.xaml">
+                            <fd:PaneView.Content>
+                                <TextBox AcceptsReturn="True" AcceptsTab="True">
+
+                                </TextBox>
+                            </fd:PaneView.Content>
+                        </fd:PaneView>
+                        <fd:PaneView Header="Brushes.xaml" IsPinned="True">
+                            <fd:PaneView.Content>
+                                <TextBox AcceptsReturn="True" AcceptsTab="True">
+
+                                </TextBox>
+                            </fd:PaneView.Content>
+                        </fd:PaneView>
                     </fd:DocumentPaneGroup>
                     <!--<fd:DockPaneGroup DockedWidth="300"
                                       DockedHeight="300"
