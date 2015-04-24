@@ -90,6 +90,7 @@
     <Compile Include="Model\PaneViewCollection.cs" />
     <Compile Include="Model\View.cs" />
     <Compile Include="Primitives\DocumentsPanel.cs" />
+    <Compile Include="Primitives\DropDownMenu.cs" />
     <Compile Include="Primitives\PinnedDocumentsPanel.cs" />
     <Compile Include="Primitives\SplitterItemsPanel.cs" />
     <Compile Include="Primitives\SplitterGrip.cs" />
@@ -156,6 +157,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Themes\DocumentPaneItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\DropDownMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

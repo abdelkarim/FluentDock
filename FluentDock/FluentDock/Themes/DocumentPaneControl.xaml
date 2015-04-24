@@ -157,6 +157,11 @@
                         <DockPanel Grid.Row="0">
                             <pr:PinnedDocumentsPanel x:Name="PART_PinnedDocumentsPanel"
                                                      DockPanel.Dock="Left" />
+                            <pr:DropDownMenu DockPanel.Dock="Right">
+                                <pr:DropDownMenu.ContextMenu>
+                                    <ContextMenu ItemsSource="{TemplateBinding ItemsSource}" />
+                                </pr:DropDownMenu.ContextMenu>
+                            </pr:DropDownMenu>
                             <ScrollViewer Style="{StaticResource DocumentsPaneControl_ScrollViewerStyle}">
                                 <pr:DocumentsPanel x:Name="PART_DocumentsPanel"
                                                    IsItemsHost="True" />

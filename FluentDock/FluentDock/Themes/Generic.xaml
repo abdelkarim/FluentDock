@@ -12,5 +12,6 @@
         <ResourceDictionary Source="/FluentDock;component/Themes/DocumentPaneItem.xaml" />
         <ResourceDictionary Source="/FluentDock;component/Themes/DockGroupControl.xaml" />
         <ResourceDictionary Source="/FluentDock;component/Themes/DockingContainer.xaml" />
+        <ResourceDictionary Source="/FluentDock;component/Themes/DropDownMenu.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
