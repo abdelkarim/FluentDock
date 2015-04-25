@@ -121,6 +121,16 @@ namespace FluentDock
             return (length1.UnitType != length2.UnitType) || (length1.Value != length2.Value);
         }
 
+        public static ItemLength operator +(ItemLength leftHandSide, double rightSide)
+        {
+            return new ItemLength(leftHandSide.Value + rightSide, leftHandSide.UnitType);
+        }
+
+        public static ItemLength operator -(ItemLength leftHandSide, double rightSide)
+        {
+            return new ItemLength(leftHandSide.Value - rightSide, leftHandSide.UnitType);
+        }
+
         public bool Equals(ItemLength other)
         {
             return this == other;

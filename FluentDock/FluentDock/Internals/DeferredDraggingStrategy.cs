@@ -155,10 +155,9 @@ namespace FluentDock.Internals
 
         private void OnDragCompleted(SplitterGrip grip, double change)
         {
-            /*
-             * if the change is negative the pop up was dragged to the left(top),
-             * otherwise it was dragged to the right(bottom)
-             */
+            // if the change is negative the pop up was dragged to the left(top),
+            // otherwise it was dragged to the right(bottom)
+
             var itemsControl = ItemsControl.ItemsControlFromItemContainer(grip.LeftChild) as DockGroupControl;
             if (itemsControl == null)
                 return;
@@ -170,19 +169,40 @@ namespace FluentDock.Internals
             var actualChange = Math.Abs(newOffset - gripOffset);
             var diffUnit = DockGroupControl.GetUnitForSize(itemsControl, actualChange);
 
+            var isLeftAbsolute = grip.LeftChild.IsFixed;
+            var isRightAbsolute = grip.RightChild.IsFixed;
+
             try
             {
                 // we defer updating the panel, until we're done.
                 itemsControl.DisallowPanelInvalidation = true;
-                if (change < 0)
+
+                if (isLeftAbsolute || isRightAbsolute)
                 {
-                    grip.LeftChild.Length = new ItemLength(grip.LeftChild.Length.Value - diffUnit, grip.LeftChild.Length.UnitType);
-                    grip.RightChild.Length = new ItemLength(grip.RightChild.Length.Value + diffUnit, grip.RightChild.Length.UnitType);
+                    if (isLeftAbsolute)
+                        if (change < 0)
+                            grip.LeftChild.Length -= actualChange;
+                        else
+                            grip.LeftChild.Length += actualChange;
+
+                    if (isRightAbsolute)
+                        if (change < 0)
+                            grip.RightChild.Length += actualChange;
+                        else
+                            grip.RightChild.Length -= actualChange;
                 }
-                else
+                else // both use star based measurement system
                 {
-                    grip.LeftChild.Length = new ItemLength(grip.LeftChild.Length.Value + diffUnit, grip.LeftChild.Length.UnitType);
-                    grip.RightChild.Length = new ItemLength(grip.RightChild.Length.Value - diffUnit, grip.RightChild.Length.UnitType);
+                    if (change < 0)
+                    {
+                        grip.LeftChild.Length -= diffUnit;
+                        grip.RightChild.Length += diffUnit;
+                    }
+                    else
+                    {
+                        grip.LeftChild.Length += diffUnit;
+                        grip.RightChild.Length -= diffUnit;
+                    }
                 }
             }
             finally

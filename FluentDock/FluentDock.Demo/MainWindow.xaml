@@ -66,21 +66,16 @@
             </fd:AutoHideChannelView>
             <fd:DockGroup Orientation="Horizontal" DockedWidth="*" DockedHeight="*" FloatingHeight="*" FloatingWidth="*">
                 <fd:DockGroup Orientation="Vertical" DockedWidth="*" DockedHeight="*" FloatingHeight="*" FloatingWidth="*">
-                    <!--<fd:DockPaneGroup DockedWidth="300"
+                    <fd:DockPaneGroup DockedWidth="300"
                                       DockedHeight="300"
                                       FloatingWidth="300"
                                       FloatingHeight="300">
                         <fd:PaneView Header="Solution Explorer" Title="Solution Explorer" />
                         <fd:PaneView Header="Team Explorer" Title="Team Explorer" />
-                    </fd:DockPaneGroup>-->
+                    </fd:DockPaneGroup>
                     <fd:DocumentPaneGroup DockedWidth="*" DockedHeight="*">
                         <fd:PaneView Header="AutoHideRootControl.cs" IsPinned="True" />
-                        <fd:PaneView Header="AutoHideRootControl.cs" IsPinned="True" />
-                        <fd:PaneView Header="AutoHideRootControl.cs" IsPinned="True" />
-                        <fd:PaneView Header="AutoHideRootControl.cs" IsPinned="True" />
-                        <fd:PaneView Header="AutoHideRootControl.cs" IsPinned="True" />
-                        <fd:PaneView Header="AutoHideRootControl.cs" IsPinned="True" />
-                        <fd:PaneView Header="AutoHideRootControl.cs" IsPinned="True">
+                        <fd:PaneView Header="DocumentPaneControl.cs" IsPinned="True">
                             <fd:PaneView.Content>
                                 <TextBox AcceptsReturn="True" AcceptsTab="True">
                                     
@@ -109,13 +104,13 @@
                             </fd:PaneView.Content>
                         </fd:PaneView>
                     </fd:DocumentPaneGroup>
-                    <!--<fd:DockPaneGroup DockedWidth="300"
+                    <fd:DockPaneGroup DockedWidth="300"
                                       DockedHeight="300"
                                       FloatingWidth="300"
                                       FloatingHeight="300">
                         <fd:PaneView Header="Solution Explorer" Title="Solution Explorer" />
                         <fd:PaneView Header="Team Explorer" Title="Team Explorer" />
-                    </fd:DockPaneGroup>-->
+                    </fd:DockPaneGroup>
                 </fd:DockGroup>
             </fd:DockGroup>
         </fd:DockingProfile>
