@@ -4,7 +4,7 @@
         xmlns:fd="http://schemas.fluentdock.io/"
         Title="FluentDock (abdelkarim.se@gmail.com)"
         Height="768"
-        Width="1024">
+        Width="1324">
     
     <Window.Resources>
         <fd:DockingProfile x:Key="NormalProfile">
@@ -70,8 +70,20 @@
                                       DockedHeight="300"
                                       FloatingWidth="300"
                                       FloatingHeight="300">
-                        <fd:PaneView Header="Solution Explorer" Title="Solution Explorer" />
-                        <fd:PaneView Header="Team Explorer" Title="Team Explorer" />
+                        <fd:PaneView Header="Solution Explorer" Title="Solution Explorer">
+                            <fd:PaneView.Content>
+                                <StackPanel TextElement.Foreground="Black">
+                                    <TextBlock Text="Solution Explorer" HorizontalAlignment="Center" />
+                                </StackPanel>
+                            </fd:PaneView.Content>
+                        </fd:PaneView>
+                        <fd:PaneView Header="Team Explorer" Title="Team Explorer">
+                            <fd:PaneView.Content>
+                                <StackPanel TextElement.Foreground="Black">
+                                    <TextBlock Text="Team Explorer" HorizontalAlignment="Center" />
+                                </StackPanel>
+                            </fd:PaneView.Content>
+                        </fd:PaneView>
                     </fd:DockPaneGroup>
                     <fd:DocumentPaneGroup DockedWidth="*" DockedHeight="*">
                         <fd:PaneView Header="AutoHideRootControl.cs" IsPinned="True" />

@@ -68,6 +68,7 @@
     <Compile Include="Internals\IDraggingStrategy.cs" />
     <Compile Include="Internals\ContinuousDraggingStrategy.cs" />
     <Compile Include="Internals\DeferredDraggingStrategy.cs" />
+    <Compile Include="Internals\LogicalTreeHelpers.cs" />
     <Compile Include="Internals\UIElementCollectionExtensions.cs" />
     <Compile Include="Internals\VisualTreeHelpers.cs" />
     <Compile Include="ItemLength.cs" />

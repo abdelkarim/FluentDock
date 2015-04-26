@@ -26,19 +26,20 @@ namespace FluentDock
 
         #region HasSinglePane
 
-        /// <summary>
-        /// HasSinglePane Read-Only Dependency Property
-        /// </summary>
         private static readonly DependencyPropertyKey HasSinglePanePropertyKey = DependencyProperty.RegisterReadOnly(
             "HasSinglePane",
             typeof(bool),
             typeof(PaneControl),
             new FrameworkPropertyMetadata(BooleanBoxes.False));
 
+        /// <summary>
+        /// Identifies the <see cref="HasSinglePane"/> Read-Only Dependency Property.
+        /// </summary>
         public static readonly DependencyProperty HasSinglePaneProperty = HasSinglePanePropertyKey.DependencyProperty;
 
         /// <summary>
-        /// 
+        /// Gets a value that indicates whether this <see cref="PaneControl"/> has a single
+        /// <see cref="PaneItem"/> in it or not.
         /// </summary>
         public bool HasSinglePane
         {
@@ -101,16 +102,29 @@ namespace FluentDock
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
-            InvalidateSelectedContent();
+            InvalidateSelectedTitle();
         }
 
         protected override void OnSelectionChanged(SelectionChangedEventArgs e)
         {
             base.OnSelectionChanged(e);
-            InvalidateSelectedContent();
+
+            /*var selectedContent = this.SelectedContent as DependencyObject;
+            if (selectedContent != null)
+            {
+                var logicalParent = LogicalTreeHelper.GetParent(selectedContent);
+                if (logicalParent != null)
+                {
+                    LogicalTreeHelpers.RemoveLogicalChild(logicalParent, selectedContent);
+                    LogicalTreeHelpers.AddLogicalChild(this, selectedContent);
+                }
+            }*/
+
+
+            InvalidateSelectedTitle();
         }
 
-        private void InvalidateSelectedContent()
+        private void InvalidateSelectedTitle()
         {
             var selectedPane = GetSelectedPane();
             SelectedPaneTitle = selectedPane == null ? null : selectedPane.Title;

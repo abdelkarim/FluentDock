@@ -64,6 +64,7 @@
                         <Style TargetType="{x:Type fd:PaneItem}">
                             <Setter Property="Header" Value="{Binding Path=Header}" />
                             <Setter Property="Content" Value="{Binding Path=Content}" />
+                            <Setter Property="Title" Value="{Binding Path=Title}" />
                         </Style>
                     </fd:PaneControl.ItemContainerStyle>
                 </fd:PaneControl>
